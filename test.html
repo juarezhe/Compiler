@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>h1 {text-align: center} p {text-align: center} div {text-align: center}</style>
+<h1>Music Box</h1>
+<p>If audio does not play audio automatically, please click the button below.</p>
+<div><button type=button onclick=playAudio()>Play</button></div>
+<script>
+function playAudio(){
+var audioQueue = []
+
+audioQueue.push(new Audio("a4.mp3"))
+audioQueue[0].onended = function() {audioQueue[1].play()}
+audioQueue.push(new Audio("b4.mp3"))
+audioQueue[1].onended = function() {audioQueue[2].play()}
+audioQueue.push(new Audio("c4.mp3"))
+audioQueue[2].onended = function() {audioQueue[3].play()}
+audioQueue.push(new Audio("d4.mp3"))
+audioQueue[0].play()}
+playAudio()
+</script>
+</body>
+</html>
